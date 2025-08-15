@@ -21,8 +21,8 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
-                        <key>MinimumOSVersion</key>
-                        <string>18.0</string>
+			<key>MinimumOSVersion</key>
+			<string>18.0</string>
 		</dict>
 		<dict>
 			<key>LibraryIdentifier</key>

@@ -44,5 +44,6 @@ let package = Package(
                 .process("Resources/MediaPipeVision.Info.plist")
             ]
         ),
-    ]
+    ],
+    swiftLanguageModes: [.v5]
 )
