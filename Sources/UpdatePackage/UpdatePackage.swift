@@ -27,7 +27,7 @@ struct UpdatePackage {
     }
     
     private static func downloadPods() {
-        let podPath = "/usr/local/bin/pod"
+        let podPath = "/opt/homebrew/lib/ruby/gems/3.3.0/bin/pod"
         
         let temporaryDirectory = Definitions.temporaryProjectRoot
         

@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>MinimumOSVersion</key>
+	<string>18.0</string>
 	<key>CFBundleExecutable</key>
 	<string>MediaPipeTasksVision</string>
 	<key>CFBundleIdentifier</key>
@@ -19,6 +21,8 @@
 			</array>
 			<key>SupportedPlatform</key>
 			<string>ios</string>
+			<key>MinimumOSVersion</key>
+			<string>18.0</string>
 		</dict>
 		<dict>
 			<key>LibraryIdentifier</key>
