@@ -141,6 +141,7 @@ struct UpdatePackage {
                 -configuration Release \
                 -sdk iphoneos \
                 BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+                DEBUG_INFORMATION_FORMAT=dwarf-with-dsym \
                 SYMROOT=\(buildFolder)
             """
         
@@ -152,6 +153,7 @@ struct UpdatePackage {
               -configuration Release \
               -sdk iphonesimulator \
               BUILD_LIBRARY_FOR_DISTRIBUTION=YES \
+              DEBUG_INFORMATION_FORMAT=dwarf-with-dsym \
               SYMROOT=\(buildFolder)
         """
         
