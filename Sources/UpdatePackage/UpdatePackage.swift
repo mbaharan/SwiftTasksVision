@@ -170,20 +170,24 @@ struct UpdatePackage {
         Terminal.runCommand(buildXCFrameworkCommand)
     }
     
-    private static func copyCommonGraphXCFramework() throws {
-        let buildFolder = Definitions.temporaryProjectRoot
-            .appending(path: "Builds")
-        let sourceXCframeworkPath = buildFolder
-            .appending(path: "MediaPipeCommonGraphLibraries.xcframework")
-        let dependenciesTasksCommonGraphXCFramework = Definitions.packageRoot
-            .appending(path: "Dependencies")
-            .appending(path: "MediaPipeCommonGraphLibraries.xcframework")
-        try FileManager.default
-            .copyContents(
-                of: URL(fileURLWithPath: sourceXCframeworkPath.path),
-                to: URL(fileURLWithPath: dependenciesTasksCommonGraphXCFramework.path)
-            )
-    }
+  private static func copyCommonGraphXCFramework() throws {
+    let buildFolder = Definitions.temporaryProjectRoot
+      .appending(path: "Builds")
+    let sourceXCframeworkPath = buildFolder
+      .appending(path: "MediaPipeCommonGraphLibraries.xcframework")
+    let dependenciesTasksCommonGraphXCFramework = Definitions.packageRoot
+      .appending(path: "Dependencies")
+      .appending(path: "MediaPipeCommonGraphLibraries.xcframework")
+    
+      // Remove existing if present
+    try? FileManager.default.removeItem(atPath: dependenciesTasksCommonGraphXCFramework.path)
+    
+      // Copy entire XCFramework including dSYMs
+    try FileManager.default.copyItem(
+      at: URL(fileURLWithPath: sourceXCframeworkPath.path),
+      to: URL(fileURLWithPath: dependenciesTasksCommonGraphXCFramework.path))
+  }
+  
     
     private static func removeTemporaryFiles() throws {
         let fileManager = FileManager.default
